@@ -1,0 +1,5 @@
+# Ignore the run file (compiled executable)
+run
+
+# Ignore the .vscode directory (VS Code settings)
+.vscode/

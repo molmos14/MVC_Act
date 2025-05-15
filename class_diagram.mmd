@@ -1,0 +1,31 @@
+classDiagram
+    class QuoteModel {
+        - quotes: std::vector<std::string>
+        + QuoteModel()
+        + get_quote(n: int): std::string
+        + add_quote(newQuote: std::string)
+        + update_quote(index: int, updatedQuote: std::string)
+        + delete_quote(index: int)
+        + get_all_quotes(): const std::vector<std::string>&
+    }
+
+    class QuoteTerminalView {
+        + display_quote(quote: std::string)
+        + display_all_quotes(quotes: std::vector<std::string>)
+        + display_error(error: std::string)
+        + get_user_input(prompt: std::string): std::string
+    }
+
+    class QuoteTerminalController {
+        - model: QuoteModel
+        - view: QuoteTerminalView
+        + QuoteTerminalController(model: QuoteModel, view: QuoteTerminalView)
+        + run()
+        - handle_view()
+        - handle_add()
+        - handle_update()
+        - handle_delete()
+    }
+
+    QuoteModel <.. QuoteTerminalController : uses
+    QuoteTerminalView <.. QuoteTerminalController : uses

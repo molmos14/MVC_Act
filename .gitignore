@@ -1,5 +1,8 @@
 # Ignore the run file (compiled executable)
 run
 
+# Ignore gitignore
+.gitignore
+
 # Ignore the .vscode directory (VS Code settings)
 .vscode/
